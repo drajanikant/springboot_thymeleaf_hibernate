@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Home</title>
+
+</head>
+<body>
+	<h1>Hello world!</h1>
+<a href="#" th:href="@{/register}" >Register student</a>
+	<table>
+		<tr>
+			<td>Student number</td>
+			<td>Student Name</td>
+			<td>Student Class</td>
+			<td>Student marks</td>
+			<td colspan="2"></td>
+		</tr>
+		
+
+			<tr th:each="student: ${students}">
+				<td th:text="${student.student_id}">1</td>
+				<td th:text="${student.student_name}">name</td>
+				<td th:text="${student.student_class}">class</td>
+				<td th:text="${student.student_marks}">marks</td>
+				<td><a href="#" th:href="@{/update/{id}(id=${student.student_id})}" >Update</a></td>
+				<td><a href="#" th:href="@{/delete/{id}(id=${student.student_id})}" >Delete</a></td>
+			</tr>
+		
+	</table>
+	
+</body>
+</html>

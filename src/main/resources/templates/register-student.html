@@ -1,0 +1,20 @@
+
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" th:object="${student}" action="#"
+		th:action="@{/register}">
+		Student id <input th:field="*{student_id}" placeholder="Student id" />
+		<br></br> Student name<input th:field="*{student_name}" /><br></br>
+		Student class<input th:field="*{student_class}" /><br></br> Student
+		marks <input th:field="*{student_marks}" /><br></br>
+		<button type="submit">Register</button>
+	</form>
+</body>
+</html>
